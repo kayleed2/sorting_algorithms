@@ -8,23 +8,51 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current, listint_t *tmp;
-	listint_t *copy = NULL;
+	listint_t *current, *tmp;
 
 	if (!list || !(*list)->next)
 		return;
 
 	current = (*list)->next;
-	tmp = current;
 
 	while (current != NULL)
 	{
-		current = current->next
-		if (tmp->n < tmp->prev->n)
+		/* if current is larger than the previous node */
+		while (current->n > current->prev->n)
 		{
-			while (tmp->prev && tmp->n < tmp->prev->n)
-			{
-				copy = tmp->prev;
-				copy->next = tmp->next;
+			if (!current->next)
+				return;
+			current = current->next;
 		}
+		/* set tmp marker for reference */
+		tmp = current->next;
+		/* figure out where the current node belongs */
+		while (current->prev && current->n < current->prev->n)
+			swapNode(list, current->prev, current);
+		/* go again */
+		current = tmp;
+	}
+}
+
+/**
+ * swapNode - swaps two adjacent nodes based on comparison
+ * @list: the list of nodes
+ * @a: the first node in sequence
+ * @b: the second node in sequence
+ * Return: void
+ */
+void swapNode(listint_t **list, listint_t *node1, listint_t *node2)
+{
+	if (node1->prev)
+		node1->prev->next = node2;
+	if (node2->next)
+		node2->next->prev = node1;
+	/* swaps node pointers, thus moving them */
+	node1->next = node2->next;
+	node2->prev = node1->prev;
+	node2->next = node1;
+	node1->prev = node2;
+	while ((*list)->prev)
+		*list = (*list)->prev;
+	print_list(*list);
 }

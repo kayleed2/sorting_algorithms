@@ -19,7 +19,7 @@ the following:
 
 ## Tasks
 
-0. Bubble sort
+### 0. Bubble sort
 
 	Write a function that sorts an array of integers in ascending order based on
 	the Bubble sort algorithm.
@@ -31,7 +31,7 @@ the following:
 	This algorithm is not used in real world applications, and is instead primarily
 	used as an education tool.
 
-1. Insertion sort
+### 1. Insertion sort
 
 	Write a function that sorts a doubly-linked list of integers in ascending order
 	based on the Insertion sort algorithm.
@@ -46,7 +46,7 @@ the following:
 	data sets. It is also adaptive, which means that it is effecient for data sets
 	that are already substantially sorted.
 
-2. Selection sort
+### 2. Selection sort
 
 	Write a function that sorts an array of integers in ascending order using the
 	Selection sort algorithm.
@@ -66,7 +66,7 @@ the following:
 	algorithms, and has performance advantages on systems where auxiliary memory
 	is limited.
 
-3. Quick sort
+### 3. Quick sort
 
 	Write a function that sorts an array of integers in ascending order using the
 	Quick sort algorithm.

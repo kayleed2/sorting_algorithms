@@ -11,11 +11,11 @@
 void merge_sort(int *array, size_t size)
 {
     int i;
-    /* int *right = array + (size / 2); */
+    int *right = array + (size / 2);
 
     if (size < 2)
         return;
     
-    for(i = 0; i < (int) size; i++)
-        printf("%d", array[i]);
+    print_array(array, size);
+    print_array(right, (size / 2));
 }

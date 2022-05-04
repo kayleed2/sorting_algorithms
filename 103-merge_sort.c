@@ -15,5 +15,5 @@ void merge_sort(int *array, size_t size)
     for(i = 0; i < 5; i++)
         printf("%d", array[i]);
 
-    printf(size);
+    printf("%lu", (unsigned long) size);
 }

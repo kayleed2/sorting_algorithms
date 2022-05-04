@@ -19,6 +19,16 @@ the following:
 
 ## Tasks
 
+### Syntax of Answer Files
+O(1)
+O(n)
+O(n!)
+n square -> O(n^2)
+log(n) -> O(log(n))
+n * log(n) -> O(nlog(n))
+n + k -> O(n+k)
+…
+
 ### 0. Bubble sort
 
 	Write a function that sorts an array of integers in ascending order based on

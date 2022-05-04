@@ -12,8 +12,12 @@ void merge_sort(int *array, size_t size)
 {
     int i;
 
-    for(i = 0; i < 5; i++)
-        printf("%d", array[i]);
+    if (size < 2)
+        return 0;
+    
+    int *right = array + (size / 2);
+    for(i = 0; i < size; i++)
+        printf("%d", right[i]);
 
     printf("%lu", (unsigned long) size);
 }

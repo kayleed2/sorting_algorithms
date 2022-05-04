@@ -8,7 +8,7 @@
 * Return: Sorted array
 **/
 
-void merge_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size)
 {
-    
+    printf("hello");
 }

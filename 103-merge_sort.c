@@ -3,8 +3,8 @@
 
 /**
 * merge_sort - Sorts array in ascending order
-* array: array to be sorted
-* size: size of array
+* @array: array to be sorted
+* @size: size of array
 * Return: Sorted array
 **/
 

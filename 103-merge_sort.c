@@ -10,5 +10,6 @@
 
 void merge_sort(int *array, size_t size)
 {
-    printf("hello");
+    printf(array);
+    printf(size);
 }

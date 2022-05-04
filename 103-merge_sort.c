@@ -17,5 +17,5 @@ void merge_sort(int *array, size_t size)
         return;
     
     for(i = 0; i < (int) size; i++)
-        printf("%d, ", array[i]);
+        printf("%d", array[i]);
 }

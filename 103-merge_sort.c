@@ -10,8 +10,10 @@
 
 void merge_sort(int *array, size_t size)
 {
-    for(int i = 0; i != NULL; i++)
+    int i;
+
+    for(i = 0; i != NULL; i++)
         printf("%d", array[i]);
 
-    printf("%zu", size);
+    printf("%d", size);
 }

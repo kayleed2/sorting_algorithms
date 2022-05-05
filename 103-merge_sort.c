@@ -10,18 +10,21 @@
 
 void merge_sort(int *array, size_t size)
 {
-    int alg;
     int *right;
+    int mid;
+    int start = 0;
 
     if (size < 2)
         return;
 
     if (size % 2 != 0)
-        alg = (size / 2) - 1;
+        mid = size - (size / 2);
     
-    alg = size / 2;
-    right = array + alg;
+    mid = size / 2;
+    right = array + mid;
+
+    merge_sort(right, (size - mid));
     
     print_array(array, size);
-    print_array(right, alg);
+    print_array(right, (size - mid));
 }

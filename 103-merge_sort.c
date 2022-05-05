@@ -10,8 +10,12 @@
 
 void merge_sort(int *array, size_t size)
 {
-    int *right;
+    // int *right;
+    // int *left;
     int mid;
+    // int start;
+    // int leftPointer;
+    // int rightPointer;
 
     if (size < 2)
         return;
@@ -19,9 +23,16 @@ void merge_sort(int *array, size_t size)
     if (size % 2 != 0)
         mid = size - (size / 2);
     
-    mid = size / 2;
-    right = array + mid;
+    printf("%ul", (unsigned long) size);
+    
+    // mid = size / 2;
+    // right = array + (mid + 1);
+    // left
 
-    merge_sort(right, (size - mid));
-    print_array(right, (size - mid));
+    // merge_sort(right, (size - mid));
+    // merge_sort(left, mid);
+    
+    // start = 0;
+    // leftPointer = start;
+    // rightPointer = 
 }

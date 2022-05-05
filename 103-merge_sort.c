@@ -41,11 +41,11 @@ void merge_sort(int *array, size_t size)
     if (!aux)
         return;
     
-    for (k = start; k <= size; k++) {
+    for (k = start; k <= (int)size; k++) {
         if (leftPointer == mid) {
             aux[k] = array[rightPointer];
             rightPointer++;
-        } else if (rightPointer == j) {
+        } else if (rightPointer == (int)size) {
             aux[k] = array[leftPointer];
             leftPointer++;
         } else if (array[leftPointer] < array[rightPointer]) {
@@ -56,7 +56,7 @@ void merge_sort(int *array, size_t size)
             rightPointer++;
         }
     }
-    for (k = start; k <= size; k++) {
+    for (k = start; k <= (int)size; k++) {
         array[k] = aux[k];
     }
 }

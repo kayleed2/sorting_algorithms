@@ -12,33 +12,51 @@ void merge_sort(int *array, size_t size)
 {
     int *right;
     int *left;
+    int *aux;
     int mid;
-    /* int start;
+    int start;
     int leftPointer;
-    int rightPointer; */
+    int rightPointer;
+    int k;
 
     if (size < 2)
         return;
 
     if (size % 2 != 0)
-    {
-        printf("Odd:");
         mid = size - (size / 2);
-    }
     else 
-    {
-        printf("Even:");
         mid = size / 2;
-    }
-    
-    printf("HELLO I AM %d", mid);
-    right = array + (mid + 1);
-    left = right - (mid + 1);
 
-    merge_sort(right, (size - mid));
+    right = array + (mid);
+    left = array;
+
+    merge_sort(right, mid);
     merge_sort(left, mid);
     
-    /* start = 0;
+    start = 0;
     leftPointer = start;
-    rightPointer = mid; */
+    rightPointer = mid;
+
+    aux = malloc(sizeof(array) * 1);
+    if (!aux)
+        return;
+    
+    for (k = start; k <= size; k++) {
+        if (leftPointer == mid) {
+            aux[k] = array[rightPointer];
+            rightPointer++;
+        } else if (rightPointer == j) {
+            aux[k] = array[leftPointer];
+            leftPointer++;
+        } else if (array[leftPointer] < array[rightPointer]) {
+            aux[k] = array[leftPointer];
+            leftPointer++;
+        } else {
+            aux[k] = array[rightPointer];
+            rightPointer++;
+        }
+    }
+    for (k = start; k <= size; k++) {
+        array[k] = aux[k];
+    }
 }

@@ -23,7 +23,5 @@ void merge_sort(int *array, size_t size)
     right = array + mid;
 
     merge_sort(right, (size - mid));
-    
-    print_array(array, size);
     print_array(right, (size - mid));
 }

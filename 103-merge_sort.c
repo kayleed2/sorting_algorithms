@@ -37,9 +37,6 @@ void merge_sort(int *array, size_t size)
     leftPointer = start;
     rightPointer = mid;
 
-    if (!aux)
-        return;
-    
     for (k = start; k <= (int)size; k++) {
         if (leftPointer == mid) {
             aux[k] = array[rightPointer];

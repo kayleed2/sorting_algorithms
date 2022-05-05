@@ -21,9 +21,15 @@ void merge_sort(int *array, size_t size)
         return;
 
     if (size % 2 != 0)
+    {
+        printf("Odd:");
         mid = size - (size / 2);
+    }
     else 
+    {
+        printf("Even:");
         mid = size / 2;
+    }
     
     printf("HELLO I AM %d", mid);
     right = array + (mid + 1);

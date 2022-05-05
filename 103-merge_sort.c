@@ -37,7 +37,6 @@ void merge_sort(int *array, size_t size)
     leftPointer = start;
     rightPointer = mid;
 
-    aux = malloc(sizeof(array) * 1);
     if (!aux)
         return;
     
@@ -59,5 +58,4 @@ void merge_sort(int *array, size_t size)
     for (k = start; k <= (int)size; k++) {
         array[k] = aux[k];
     }
-    free(aux);
 }

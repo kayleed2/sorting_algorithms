@@ -30,8 +30,9 @@ void merge_sort(int *array, size_t size)
     merge(0, mid, array, final_array);
     merge(mid + 1, size, array, final_array);
 
-    for (i = 0; i <= size; i++) {      // copy the elements from aux[] to a[]
+    for (i = 0; i <= (int)size; i++) {
         array[i] = final_array[i];
+    }
 
     printf("Left array: ");
     for (i = 0; i < (int)size; i++)
@@ -52,7 +53,8 @@ void merge_sort(int *array, size_t size)
 * @final_array: final array
 * Return: Sorted array
 **/
-void merge(int start, int end, int *arr, int *final_array) {
+void merge(int start, int end, int *arr, int *final_array) 
+{
     int leftPointer = start;
     int rightPointer = ((start + end) / 2) + 1;
     int size = start + end;

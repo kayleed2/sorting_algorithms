@@ -3,8 +3,9 @@
 
 /**
 * merge - Sorts array
-* @start: starting point of array
-* @end: ending point of array
+* @l: starting point of array
+* @r: ending point of array
+* @m: mid point of array
 * @array: array to be sorted
 * @final_array: final array
 * Return: Sorted array
@@ -71,8 +72,11 @@ void merge_sort(int *array, size_t size)
 
 /**
 * call_to_sort - Sorts array in ascending order
+* @l: starting point of array
+* @r: ending point of array
+* @m: mid point of array
 * @array: array to be sorted
-* @size: size of array
+* @final_array: final array
 * Return: Sorted array
 **/
 

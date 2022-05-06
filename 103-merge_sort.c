@@ -12,8 +12,6 @@ void merge_sort(int *array, size_t size)
 {
     int mid;
     int *final_array;
-    int *left;
-    int *right;
 
     if (size < 2)
         return;

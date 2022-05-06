@@ -39,7 +39,7 @@ void merge_sort(int *array, size_t size)
     
     for (i = 0; i < (int)size; i++)
     {
-        printf("Left array: ");
+        printf("Right array: ");
         printf("%d, ", final_array[i]);
     }
 }

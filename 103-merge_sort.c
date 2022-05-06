@@ -39,13 +39,14 @@ void merge_sort(int *array, size_t size)
 * @final_array: final array
 * Return: Sorted array
 **/
+
 void merge(int *array, int l, int m, int r) 
 {
     int i, j, k;
     int n1 = m - l + 1;
     int n2 = r - m;
-    int L[n1];
-    int R[n2];
+    int L[100];
+    int R[100];
 
     for (i = 0; i < n1; i++)
         L[i] = array[l + i];

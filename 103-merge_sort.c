@@ -51,14 +51,16 @@ void merge_sort(int *array, size_t size)
 **/
 void merge(int start, int end, int *arr, int *final_array) {
     int leftPointer = start;
-    int rightPointer = end;
+    int rightPointer = ((start + end) / 2) + 1;
+    int size = start + end;
+    int mid = ((start + end) / 2);
     int k;
 
-    for (k = start; k <= end; k++) {
-        if (leftPointer == end) {
+    for (k = start; k <= size; k++) {
+        if (leftPointer == mid + 1) {
             final_array[k] = arr[rightPointer];
             rightPointer++;
-        } else if (rightPointer == end) {
+        } else if (rightPointer == size + 1) {
             final_array[k] = arr[leftPointer];
             leftPointer++;
         } else if (arr[leftPointer] < arr[rightPointer]) {

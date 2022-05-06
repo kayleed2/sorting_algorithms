@@ -45,6 +45,8 @@ void merge(int *array, int l, int m, int r, int *final_array)
     for (i = l; i <= r; i += 1) {
         array[i] = final_array[i - l];
     }
+    print_array(array, sizeof(array));
+    printf("\n ^ ARRAY");
 }
 
 /**
@@ -74,7 +76,6 @@ void merge_sort(int *array, size_t size)
 * call_to_sort - Sorts array in ascending order
 * @l: starting point of array
 * @r: ending point of array
-* @m: mid point of array
 * @array: array to be sorted
 * @final_array: final array
 * Return: Sorted array

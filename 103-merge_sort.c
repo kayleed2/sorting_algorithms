@@ -12,6 +12,7 @@ void merge_sort(int *array, size_t size)
 {
     int mid;
     int *final_array;
+    int i;
 
     if (size < 2)
         return;
@@ -29,11 +30,11 @@ void merge_sort(int *array, size_t size)
     merge(0, mid, array, final_array);
     merge(mid + 1, size, array, final_array);
 
-    for (int i = 0; i < mid; i++)
-        printf(final_array[i]);
+    for (i = 0; i < mid; i++)
+        printf("%d", final_array[i]);
     
-     for (int i = 0; i < size; i++)
-        printf(array[i]);
+     for (i = 0; i < size; i++)
+        printf("%d", array[i]);
 
 }
 

@@ -10,14 +10,10 @@
 
 void merge_sort(int *array, size_t size)
 {
-    int *right;
-    int *left;
-    int *aux = array;
     int mid;
-    int start;
-    int leftPointer;
-    int rightPointer;
-    int k;
+    int *final_array;
+    int *left;
+    int *right;
 
     if (size < 2)
         return;
@@ -27,32 +23,37 @@ void merge_sort(int *array, size_t size)
     else 
         mid = size / 2;
 
-    right = array + (mid);
-    left = array;
+    final_array = malloc(sizeof(array));
 
-    merge_sort(right, mid);
-    merge_sort(left, mid);
-    
-    start = 0;
-    leftPointer = start;
-    rightPointer = mid;
+    if (!final_array) 
+        free(final_array);
 
-    for (k = start; k <= (int)size; k++) {
-        if (leftPointer == mid) {
-            aux[k] = array[rightPointer];
+    merge(0, mid, array, final_array);
+    merge(mid + 1, size, array, final_array);
+
+}
+
+void merge(int start, int end, int *arr, int *final_array) {
+    int leftPointer = start;
+    int rightPointer = end;
+    int k;
+
+    for (k = start; k <= end; k++) {
+        if (leftPointer == end) {
+            final_array[k] = arr[rightPointer];
             rightPointer++;
-        } else if (rightPointer == (int)size) {
-            aux[k] = array[leftPointer];
+        } else if (rightPointer == end) {
+            final_array[k] = arr[leftPointer];
             leftPointer++;
-        } else if (array[leftPointer] < array[rightPointer]) {
-            aux[k] = array[leftPointer];
+        } else if (arr[leftPointer] < arr[rightPointer]) {
+            final_array[k] = arr[leftPointer];
             leftPointer++;
         } else {
-            aux[k] = array[rightPointer];
+            final_array[k] = arr[rightPointer];
             rightPointer++;
         }
     }
-    for (k = start; k <= (int)size; k++) {
-        array[k] = aux[k];
+    for (k = start; k <= end; k++) {
+        arr[k] = final_array[k];
     }
 }

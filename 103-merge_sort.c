@@ -13,6 +13,7 @@ void merge_sort(int *array, size_t size)
     int p = 0;
     int r = size;
     int q;
+    int *b;
 
     if (size < 2)
         return;
@@ -22,13 +23,19 @@ void merge_sort(int *array, size_t size)
     else 
         q = size / 2;
 
+    b = malloc(sizeof(array));
+
+    if (!b)
+        free(b);
+
     if (p < r) 
     {
         merge_sort(array, q);
         merge_sort(array, q + 1);
 
-        merge(array, p, q, r);
+        merge(array, p, q, r, b);
     }
+    print_array(array, sizeof(array));
 }
 
 /**
@@ -40,9 +47,8 @@ void merge_sort(int *array, size_t size)
 * Return: Sorted array
 **/
 
-void merge(int *array, int p, int q, int r) 
+void merge(int *array, int p, int q, int r, int *b) 
 {
-    int b[50];
     int i, j, k;
     k = 0;
     i = p;

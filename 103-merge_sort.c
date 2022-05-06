@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "sort.h"
 
 /**
@@ -50,29 +49,6 @@ void merge(int *array, int l, int m, int r, int *final_array)
 }
 
 /**
-* merge_sort - Sorts array in ascending order
-* @array: array to be sorted
-* @size: size of array
-* Return: Sorted array
-**/
-
-void merge_sort(int *array, size_t size)
-{
-    int *final_array;
-
-    if (size < 2)
-        return;
-
-    final_array = malloc(sizeof(array));
-    
-    if (!final_array)
-        return;
-    
-    call_to_sort(array, 0, size - 1, final_array);
-    free(final_array);
-}
-
-/**
 * call_to_sort - Sorts array in ascending order
 * @l: starting point of array
 * @r: ending point of array
@@ -95,4 +71,27 @@ void call_to_sort(int *array, int l, int r, int *final_array) {
         call_to_sort(array, m + 1, r, final_array);
         merge(array, l, m, r, final_array);
     }
+}
+
+/**
+* merge_sort - Sorts array in ascending order
+* @array: array to be sorted
+* @size: size of array
+* Return: Sorted array
+**/
+
+void merge_sort(int *array, size_t size)
+{
+    int *final_array;
+
+    if (size < 2)
+        return;
+
+    final_array = malloc(sizeof(int) * size);
+    
+    if (!final_array)
+        return;
+    
+    call_to_sort(array, 0, size - 1, final_array);
+    free(final_array);
 }

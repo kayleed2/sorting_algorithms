@@ -14,36 +14,35 @@ void merge(int *array, int l, int m, int r, int *final_array)
 {
     int i = l;
     int j = m + 1;
-    int k = 0;
+    int k = l;
 
-    while (i <= m && j <= r) {
-        if (array[i] <= array[j]) {
+    while (i <= m && j <= r) 
+    {
+        if (array[i] <= array[j]) 
+        {
             final_array[k] = array[i];
-            k += 1;
-            i += 1;
+            k++;
+            i++;
         }
-        else {
+        else 
+        {
             final_array[k] = array[j];
-            k += 1;
-            j += 1;
+            k++;
+            j++;
         }
     }
 
-    while (i <= m) {
+    while (i <= m) 
+    {
         final_array[k] = array[i];
-        k += 1;
-        i += 1;
+        k++;
+        i++;
     }
 
-    while (j <= r) {
-        final_array[k] = array[j];
-        k += 1;
-        j += 1;
+    for (i = l; i <= r; i++) {
+        array[i] = final_array[i];
     }
-
-    for (i = l; i <= r; i += 1) {
-        array[i] = final_array[i - l];
-    }
+    
     print_array(array, sizeof(array));
     printf("\n ^ ARRAY");
 }

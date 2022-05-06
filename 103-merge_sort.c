@@ -84,5 +84,4 @@ void merge_sort(int *array, size_t size)
 
         merge(array, l, m, r);
     }
-    print_array(array, sizeof(array));
 }

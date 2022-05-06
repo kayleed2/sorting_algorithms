@@ -10,24 +10,24 @@
 
 void merge_sort(int *array, size_t size)
 {
-    int l = 0;
+    int p = 0;
     int r = size;
-    int mid;
+    int q;
 
     if (size < 2)
         return;
 
     if (size % 2 != 0)
-        mid = size - (size / 2);
+        q = size - (size / 2);
     else 
-        mid = size / 2;
+        q = size / 2;
 
-    if (l < r) 
+    if (p < r) 
     {
-        merge_sort(array, mid);
-        merge_sort(array, mid + 1);
+        merge_sort(array, q);
+        merge_sort(array, q + 1);
 
-        merge(array, l, mid, size);
+        merge(array, p, q, r);
     }
 }
 
@@ -40,47 +40,35 @@ void merge_sort(int *array, size_t size)
 * Return: Sorted array
 **/
 
-void merge(int *array, int l, int m, int r) 
+void merge(int *array, int p, int q, int r) 
 {
+    int b[50];
     int i, j, k;
-    int n1 = m - l + 1;
-    int n2 = r - m;
-    int L[100];
-    int R[100];
+    k = 0;
+    i = p;
+    j = q + 1;
 
-    for (i = 0; i < n1; i++)
-        L[i] = array[l + i];
-    for (j = 0; j < n2; j++)
-        R[j] = array[m + 1 + j];
-
-    i = 0;
-    j = 0;
-    k = l;
-
-    while (i < n1 && j < n2) 
+    while (i <= q && j <= r) 
     {
-        if (L[i] <= R[j]) {
-            array[k] = L[i];
+        if (array[i] < array[j]) {
+            b[k++] = array[i++];
             i++;
         }
         else {
-            array[k] = R[j];
-            j++;
+            b[k++] = array[j++];
         }
-        k++;
     }
 
-    while (i < n1) 
+    while (i <= q) 
     {
-        array[k] = L[i];
-        i++;
-        k++;
+        b[k++] = array[i++];
     }
 
-    while (j < n2) 
+    while (j <= r) 
     {
-        array[k] = R[j];
-        j++;
-        k++;
+        b[k++] = array[j++];
     }
+
+    for (i = r; i >= p; i--)
+        array[i] = b[--k];
 }

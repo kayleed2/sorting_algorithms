@@ -60,13 +60,13 @@ void merge(int *array, int l, int m, int r, int *final_array)
 void call_to_sort(int *array, int l, int r, int *final_array) {
     int m;
 
-    if (r % 2 != 0)
-        m = r - (r / 2);
-    else 
-        m = r / 2;
-
     if (l < r) 
     {
+        if (r % 2 != 0)
+            m = r - (r / 2);
+        else 
+            m = r / 2;
+        
         call_to_sort(array, l, m, final_array);
         call_to_sort(array, m + 1, r, final_array);
         merge(array, l, m, r, final_array);

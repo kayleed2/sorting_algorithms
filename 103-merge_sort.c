@@ -69,7 +69,4 @@ void merge(int start, int end, int *arr, int *final_array) {
             rightPointer++;
         }
     }
-    for (k = start; k <= end; k++) {
-        arr[k] = final_array[k];
-    }
 }

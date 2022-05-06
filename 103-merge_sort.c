@@ -30,6 +30,9 @@ void merge_sort(int *array, size_t size)
     merge(0, mid, array, final_array);
     merge(mid + 1, size, array, final_array);
 
+    for (i = 0; i <= size; i++) {      // copy the elements from aux[] to a[]
+        array[i] = final_array[i];
+
     printf("Left array: ");
     for (i = 0; i < (int)size; i++)
         printf("%d, ", array[i]);

@@ -65,7 +65,7 @@ void merge_sort(int *array, size_t size)
     int l = 0;
     int r = size;
     int m;
-    int right;
+    int *right;
 
     if (size < 2)
         return;

@@ -13,7 +13,7 @@ void merge_sort(int *array, size_t size)
     int p = 0;
     int r = size;
     int q;
-    int b[100];
+    int b[sizeof(array)];
 
     if (size < 2)
         return;

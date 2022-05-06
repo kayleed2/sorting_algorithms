@@ -57,7 +57,8 @@ void merge(int *array, int l, int m, int r, int *final_array)
 * Return: Sorted array
 **/
 
-void call_to_sort(int *array, int l, int r, int *final_array) {
+void call_to_sort(int *array, int l, int r, int *final_array) 
+{
     int m;
 
     if (l < r) 

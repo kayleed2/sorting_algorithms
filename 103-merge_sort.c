@@ -33,7 +33,7 @@ void merge_sort(int *array, size_t size)
     for (i = 0; i < mid; i++)
         printf("%d", final_array[i]);
     
-     for (i = 0; i < size; i++)
+     for (i = 0; i < (int)size; i++)
         printf("%d", array[i]);
 
 }

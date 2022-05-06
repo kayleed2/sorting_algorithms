@@ -30,18 +30,15 @@ void merge_sort(int *array, size_t size)
     merge(0, mid, array, final_array);
     merge(mid + 1, size, array, final_array);
 
+    printf("Left array: ");
     for (i = 0; i < mid; i++)
-    {
-        printf("Left array: ");
         printf("%d, ", array[i]);
-    }
+    
     printf("\n");
+    printf("Right array: ");
     
     for (i = 0; i < (int)size; i++)
-    {
-        printf("Right array: ");
         printf("%d, ", final_array[i]);
-    }
 }
 
 /**

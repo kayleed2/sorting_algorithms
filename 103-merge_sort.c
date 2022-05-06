@@ -29,8 +29,22 @@ void merge_sort(int *array, size_t size)
     merge(0, mid, array, final_array);
     merge(mid + 1, size, array, final_array);
 
+    for (int i = 0; i < mid; i++)
+        printf(final_array[i]);
+    
+     for (int i = 0; i < size; i++)
+        printf(final_array[i]);
+
 }
 
+/**
+* merge - Sorts array
+* @start: starting point of array
+* @end: ending point of array
+* @arr: array to be sorted
+* @final_array: final array
+* Return: Sorted array
+**/
 void merge(int start, int end, int *arr, int *final_array) {
     int leftPointer = start;
     int rightPointer = end;

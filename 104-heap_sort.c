@@ -58,15 +58,14 @@ void heap_sort(int *array, size_t size)
     int t;
     
     for (i = (size - 2) / 2; i >= 0; i--) {
-        /* print_array(array, size); */
         sift(array, size, i);
     }
     for (i = 0; i < (int)size; i++) {
+        if (i != 0) 
+            print_array(array, size);
         t = array[size - i - 1];
-        print_array(array, size);
         array[size - i - 1] = array[0];
         array[0] = t;
-        print_array(array, size);
         sift(array, size - i - 1, 0);
     }
 }

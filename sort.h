@@ -30,5 +30,6 @@ int partition(int *array, int low, int high, size_t size);
 void merge_sort(int *array, size_t size);
 void merge(int *array, int l, int m, int r, int *final_array);
 void call_to_sort(int *array, int l, int r, int *final_array);
+void heap_sort(int *array, size_t size);
 
 #endif

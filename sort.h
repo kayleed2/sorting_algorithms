@@ -34,6 +34,6 @@ void heap_sort(int *array, size_t size);
 void sift(int *a, int n, int i);
 int max(int *a, int n, int i, int j, int k);
 void radix_sort(int *array, size_t size);
-int get_max (int *a, size_t n);
+int get_max(int *a, size_t n);
 
 #endif

@@ -33,6 +33,9 @@ void radix_sort(int *array, size_t size)
 size_t bucket[10][10], bucket_cnt[10];
 size_t i, j, k, r, NOP = 0, divisor = 1, lar, pass;
 lar = get_max (array, size);
+
+if (array == NULL || size < 2)
+return;
 while (lar > 0)
 {
 NOP++;
@@ -62,8 +65,6 @@ i++;
 divisor *= 10;
 for (i = 0; i < size; i++)
 {
-if (size == 1)
-break;
 if (i == size - 1)
 printf("%d", array[i]);
 else

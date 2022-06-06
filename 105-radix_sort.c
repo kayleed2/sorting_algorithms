@@ -1,5 +1,20 @@
 #include "sort.h"
 /**
+ * get_max - get max element
+ * @a: array
+ * @n: size
+ */
+
+int get_max (int *a, size_t n)
+{
+   int max = a[0];
+   for (size_t i = 1; i < n; i++)
+      if (a[i] > max)
+         max = a[i];
+   return max;
+}
+
+/**
  * radix_sort - sorts an array of integers in ascending order
  * @array: array to sort
  * @size: size of array
@@ -7,43 +22,41 @@
  */
 void radix_sort(int *array, size_t size)
 {
-    size_t i = 0;
-    size_t j = 0;
-    int k = 0;
-    int t = 0;
-    int min = 0;
-    int tmp = 0;
-    int *arr1 = malloc(size * sizeof(array));
-
-    for (i = 0; i < size; i++)
-        arr1[i] = array[i];
-
-    for (k = 0; k < 3; k++) {
-        for (i = 0; i < size; i++) {
-            min = array[i] % 10;
-            t = i;
-            for (j = i + 1; j < size; j++) {
-                if (min > (array[j] % 10)) {
-                    min = array[j] % 10;
-                    t = j;
-                }
-            }
-
-            tmp = arr1[t];
-            arr1[t] = arr1[i];
-            arr1[i] = tmp;
-
-            tmp = array[t];
-            array[t] = array[i];
-            array[i] = tmp;
-
-        }
-        for (j = 0; j < size; j++)
-            array[j] = array[j] / 10;
-
-        if (k < 2)
-            print_array(arr1, size);
+    size_t bucket[10][10], bucket_cnt[10];
+    size_t i, j, k, r, NOP = 0, divisor = 1, lar, pass;
+    lar = get_max (array, size);
+    while (lar > 0){
+        NOP++;
+        lar /= 10;
     }
-    for (i = 0; i < size; i++)
-        array[i] = arr1[i];
+    for (pass = 0; pass < NOP; pass++){
+        for (i = 0; i < 10; i++){
+            bucket_cnt[i] = 0;
+        }
+        for (i = 0; i < size; i++){
+            r = (array[i] / divisor) % 10;
+            bucket[r][bucket_cnt[r]] = array[i];
+            bucket_cnt[r] += 1;
+        }
+        i = 0;
+        for (k = 0; k < 10; k++){
+            for (j = 0; j < bucket_cnt[k]; j++){
+                array[i] = bucket[k][j];
+                i++;
+            }
+        }
+        divisor *= 10;
+        for (i = 0; i < size; i++)
+        {
+            if (i == size - 1)
+            {
+                printf ("%d", array[i]);
+            }
+            else 
+            {
+                printf ("%d, ", array[i]);
+            }
+        }
+        printf ("\n");
+    }
 }

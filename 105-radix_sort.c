@@ -7,11 +7,13 @@
 
 int get_max (int *a, size_t n)
 {
-   int max = a[0];
-   for (size_t i = 1; i < n; i++)
-      if (a[i] > max)
-         max = a[i];
-   return max;
+    size_t i;
+    int max = a[0];
+    
+    for (i = 1; i < n; i++)
+        if (a[i] > max)
+            max = a[i];
+    return max;
 }
 
 /**

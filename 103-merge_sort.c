@@ -42,9 +42,6 @@ void merge(int *array, int l, int m, int r, int *final_array)
     for (i = l; i <= r; i++) {
         array[i] = final_array[i];
     }
-    
-    print_array(array, sizeof(array));
-    printf("\n ^ ARRAY");
 }
 
 /**
@@ -62,11 +59,7 @@ void call_to_sort(int *array, int l, int r, int *final_array)
 
     if (l < r) 
     {
-        if (r % 2 != 0)
-            m = r - (r / 2);
-        else 
-            m = r / 2;
-        
+        m = (r + l) / 2;   
         call_to_sort(array, l, m, final_array);
         call_to_sort(array, m + 1, r, final_array);
         merge(array, l, m, r, final_array);
@@ -89,9 +82,9 @@ void merge_sort(int *array, size_t size)
 
     final_array = malloc(sizeof(int) * size);
     
-    if (!final_array)
+    if (!final_array || !array)
         return;
     
-    call_to_sort(array, 0, size - 1, final_array);
+    call_to_sort(array, 0, size, final_array);
     free(final_array);
 }

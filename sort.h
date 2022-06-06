@@ -31,5 +31,8 @@ void merge_sort(int *array, size_t size);
 void merge(int *array, int l, int m, int r, int *final_array);
 void call_to_sort(int *array, int l, int r, int *final_array);
 void heap_sort(int *array, size_t size);
+void sift(int *a, int n, int i);
+int max(int *a, int n, int i, int j, int k);
+void radix_sort(int *array, size_t size);
 
 #endif

@@ -62,6 +62,8 @@ i++;
 divisor *= 10;
 for (i = 0; i < size; i++)
 {
+if (size == 1)
+break;
 if (i == size - 1)
 printf("%d", array[i]);
 else

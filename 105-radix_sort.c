@@ -32,10 +32,12 @@ void radix_sort(int *array, size_t size)
 {
 size_t bucket[10][10], bucket_cnt[10];
 size_t i, j, k, r, NOP = 0, divisor = 1, lar, pass;
-lar = get_max (array, size);
 
 if (array == NULL || size < 2)
 return;
+
+lar = get_max(array, size);
+
 while (lar > 0)
 {
 NOP++;

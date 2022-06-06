@@ -63,13 +63,6 @@ i++;
 }
 }
 divisor *= 10;
-for (i = 0; i < size; i++)
-{
-if (i == size - 1)
-printf("%d", array[i]);
-else
-printf("%d, ", array[i]);
-}
-printf("\n");
+print_array(array, size);
 }
 }
